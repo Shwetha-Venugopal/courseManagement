@@ -1,0 +1,28 @@
+<div class="container" [formGroup]="loginForm">
+  <div class="flex">
+    <div class="flex-item-contact">
+      <label for="mentor">User</label>
+      <p-dropdown [options]="userList"  optionLabel="userName" formControlName="user" optionValue="userName"placeholder="Select a User" />
+      <!-- <select name="mentor" formControlName="user">
+        <option *ngFor="let mentor of userList" [value]="mentor.userName">{{ mentor.userName }}</option>
+      </select> -->
+    </div>
+    <div>
+      <label for="street">User name</label>
+      <input type="text" pInputText id="street" formControlName="loginName" placeholder="Enter User Name">
+      <!-- <p-dropdown appendTo="body" [options]="userList" formControlName="loginName" optionLabel="userName" optionValue="id" id="cityDropdown"></p-dropdown> -->
+
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" formControlName="password" placeholder="Enter your password">
+    </div>
+  </div>
+  <div class="mt-3">
+    <button class="login-btn" (click)="clickOnLogin()">Login</button>
+
+  </div>
+  <small *ngIf="display" style="color:rgba(241, 24, 24, 0.719)">{{errorMessage}}</small>
+</div>
+
+<p-toast></p-toast>

@@ -1,0 +1,30 @@
+<div class="main-cont">
+    <div class="header">
+      <div class="logo">Teacher</div>
+      <div class="user-login">
+        <i class="pi pi-user" style="margin-right: 20px;" (click)="logOut()"></i>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="side-nav">
+        <nav>
+          <ul>
+            <li *ngFor="let link of navLinks">
+              <a [routerLink]="link.path" >{{ link.label }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main-content">
+            <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <p-toast></p-toast>
+
+  <p-confirmDialog />
+
+
+
+  

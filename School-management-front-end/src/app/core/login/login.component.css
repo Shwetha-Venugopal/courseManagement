@@ -1,0 +1,57 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.full-width .p-dropdown {
+    width: 100% !important;
+  }
+::ng-deep .p-dropdown {
+    width: 100%;
+}  
+
+::ng-deep select {
+    width: 50vh;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex div {
+    width: 300px;
+}
+
+.flex label {
+    font-weight: bold;
+}
+
+.flex input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 320px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+

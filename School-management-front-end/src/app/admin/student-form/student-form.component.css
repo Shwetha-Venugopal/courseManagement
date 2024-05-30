@@ -1,0 +1,63 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-item {
+    flex: 0 1 calc(25% - 20px);
+    margin-bottom: 10px;
+}
+
+.flex-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.flex-container-contact {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if they exceed the container width */
+}
+.margin-right{
+    margin-right: 9px;
+}
+
+.flex-item-contact {
+    flex: 1 0 45%; /* Adjust the width of the flex items as needed */
+    margin-right: 20px; /* Adjust margin between items */
+    margin-bottom: 20px; /* Add margin bottom to create space between rows */
+}
+
+.flex-item-contact label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add margin bottom between label and input */
+}
+
+.flex-item-contact input,
+.flex-item-contact p-inputNumber {
+    width: 100%; /* Make input elements fill the available width */
+}
+
+
+
+::ng-deep select {
+    width: 50vh;
+    height: 45px;
+}
+.scrollable-container {
+    max-height: 490px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}
+
+.flex-item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Just for demonstration */
+.flex-item:nth-child(odd) {
+    background-color: #f4f4f4;
+}

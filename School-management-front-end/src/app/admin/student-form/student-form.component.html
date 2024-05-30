@@ -1,0 +1,127 @@
+
+<div class=" scrollable-container" [formGroup]="studentForm">
+    <div>
+        <h3>Personal Details</h3>
+    </div>
+    <p-divider />
+    
+    <div class="flex-container">
+        <div class="flex-item">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" appCustom formControlName="firstName" placeholder="Enter your first name">
+        </div>
+        <div class="flex-item">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" appCustom formControlName="lastName"  placeholder="Enter your last name">
+        </div>
+        <div class="flex-item">
+            <label for="firstName">Password</label>
+            <input type="text" id="firstName" formControlName="password"placeholder="Enter Password">
+        </div>
+        <div class="flex-item">
+            <label for="dob">Date Of Birth</label>
+            <input type="date" class="form-control" id="dueDateInput" formControlName="dateOfBirth">
+        </div>
+        
+        <div class="flex-item">
+            <label for="city">Gender</label>
+            <select formControlName="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+              
+        </div>
+        <div class="flex-item">
+            <label for="lastName">Grade</label>
+            <p-inputNumber 
+            formControlName="grade"
+            mode="decimal" 
+            inputId="withoutgrouping" 
+            [useGrouping]="false" /> 
+        </div>
+       
+    </div>
+    
+    <p-divider />
+    <div>
+        <h3>Address</h3>
+    </div>
+    
+    <p-divider />
+    
+    <div class="flex-container">
+        <div class="flex-item">
+            <label for="street">Street</label>
+            <input type="text" id="street" formControlName="street"placeholder="Enter Street">
+        </div>
+        <div class="flex-item">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city" placeholder="Enter your last name">
+        </div>
+        <div class="flex-item">
+            <label for="state">state</label>
+            <input type="text" id="street" formControlName="state" placeholder="Enter Street">
+        </div>
+        
+        <div class="flex-item">
+            <label for="ZipCode">ZipCode</label>
+            <p-inputNumber 
+            formControlName="zipCode"
+            mode="decimal" 
+            inputId="withoutgrouping" 
+            [useGrouping]="false" /> 
+              
+        </div>
+        
+       
+    </div>
+
+    <p-divider />
+    <div>
+        <h3>Contact Info</h3>
+    </div>
+    
+    <p-divider />
+    <div class="flex-container-contact">
+        <div class="flex-item-contact">
+            <label for="street">Gmail</label>
+            <input type="text" pInputText id="street" formControlName="email" placeholder="Enter Gmail Address">
+        </div>
+        <div class="flex-item-contact">
+            <label for="ZipCode">Contact</label>
+            <p-inputNumber mode="decimal" inputId="withoutgrouping" formControlName="phone" [useGrouping]="false"></p-inputNumber> 
+        </div>
+    </div>
+
+    <p-divider />
+    <div>
+        <h3>Course Details</h3>
+    </div>
+
+    <div class="flex-container-contact">
+        <div class="flex-item-contact">
+            <label for="mentor">Course</label>
+            <select name="mentor" formControlName="course">
+              <option *ngFor="let mentor of courseList"   [value]="mentor.courseName">{{ mentor.courseName }}</option>
+            </select>
+          </div>
+          <div class="flex-item-contact">
+            <label for="dob">Enrollment Date</label>
+            <input type="date" class="form-control"  formControlName="enrollmentDate" id="dueDateInput" >
+        </div>
+          
+    </div>
+
+    <div class="mt-3 mb-3">
+        <p-button  (click)="addStudent()">{{buttonType}}</p-button>
+        <p-button *ngIf="isDisplay" class="margin-right"label="Cancel" (click)="cancelForm()" />
+    </div>
+    
+    
+    
+</div>
+
+<p-toast></p-toast>
+
+
+

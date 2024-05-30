@@ -1,0 +1,26 @@
+
+
+<div class="card mt-2">
+    <p-table [value]="taskList" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Teacher</th>
+                <th>File</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-task>
+            <tr>
+                <td>{{ task.description }}</td>
+                <td>{{ task.dueDate }}</td>
+                <td>{{ task.teacher }}</td>
+                <td>
+                    <a *ngIf="task.filePath" [href]="getFileUrl(task.filePath)" download="file.txt">Download</a>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-toast></p-toast>

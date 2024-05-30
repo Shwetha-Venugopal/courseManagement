@@ -1,0 +1,43 @@
+<div>
+    <div class="card">
+        <p-table [value]="studentList" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-student>
+                <tr>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.course }}</td>
+                    <td>{{ student.contactInfo.phone }}</td>
+                    <td>{{ student.contactInfo.email }}</td>
+                    <td>
+                        <ng-container *ngIf="(student.attendence === 'pending' || student.attendence === 'requested') && !student.isApprover; else otherStates">
+                            <i 
+                                class="pi pi-check" 
+                                style="font-size: 2rem" 
+                                (click)="viewFullDetails(student)">
+                            </i>
+                        </ng-container>
+                        <ng-template #otherStates>
+                            <ng-container *ngIf="student.attendence === 'approved' && student.isApprover; else defaultState">
+                                Approved
+                            </ng-container>
+                            <ng-template #defaultState>
+                                <!-- Add any other default state content here if needed -->
+                            </ng-template>
+                        </ng-template>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+
+<p-toast></p-toast>

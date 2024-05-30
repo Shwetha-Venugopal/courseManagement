@@ -1,0 +1,9 @@
+.margin-right{
+    margin-right: 9px;
+}
+
+.add-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
